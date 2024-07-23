@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Shop
 
-## Getting Started
+## Описание
 
-First, run the development server:
+Это пример проекта на Next.js с использованием TypeScript и Redux Toolkit. Проект демонстрирует возможности статической генерации (SSG) и инкрементальной статической перестройки (ISR).
+
+## Установка и запуск
+
+Следуйте этим шагам для установки и запуска проекта:
+
+1. Клонируйте репозиторий:
 
 ```bash
+git clone https://github.com/vitalyvitmens/shop.git
+cd my-next-app
+
+1.
+Установите зависимости:
+
+npm install
+
+1.
+Запустите проект в режиме разработки:
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+1.
+Откройте браузер и перейдите по адресу http://localhost:3000, чтобы увидеть приложение.
+
+Структура проекта
+•  pages/index.tsx: Главная страница, отображающая список продуктов.
+
+•  pages/products/[id].tsx: Страница продукта, отображающая детали продукта.
+
+•  pages/cart.tsx: Страница корзины, отображающая товары в корзине.
+
+•  redux/store.ts: Конфигурация Redux Store.
+
+•  redux/slices/productsSlice.ts: Срез Redux для управления состоянием продуктов.
+
+•  redux/slices/cartSlice.ts: Срез Redux для управления состоянием корзины.
+
+Использование
+•  Главная страница отображает список продуктов.
+
+•  Каждая страница продукта генерируется статически и обновляется инкрементально при изменении данных.
+
+•  Страница корзины позволяет добавлять и удалять товары из корзины.
+
+Примечания
+•  Для демонстрации используется локальный массив продуктов. Вы можете заменить его на данные из API или другой источник данных.
+
+•  В файле getStaticProps и getStaticPaths установлено время пересборки в 10 секунд (revalidate: 10).
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
